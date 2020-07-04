@@ -2,22 +2,20 @@ import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-fetch-data',
-  templateUrl: './fetch-data.component.html'
+  selector: 'app-logon-data',
+  templateUrl: './logon.component.html'
 })
-export class FetchDataComponent {
-  public forecasts: WeatherForecast[];
+export class LogonComponent {
+  public logonmodel: LogonModel;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
-      this.forecasts = result;
+    http.get<LogonModel>(baseUrl + 'logonmodel').subscribe(result => {
+      this.logonmodel = result;
     }, error => console.error(error));
   }
 }
 
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+interface LogonModel {
+  username: string;
+  userpassword: string;
 }

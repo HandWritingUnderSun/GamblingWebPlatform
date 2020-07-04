@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ExcelInterviewComponent } from './ExcelManager/ExcelInterview/ExcelInterview.component';
+import { LogonComponent } from './logon/logon.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ExcelInterviewComponent } from './ExcelManager/ExcelInterview/ExcelInte
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ExcelInterviewComponent
+    ExcelInterviewComponent,
+    LogonComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,7 +30,8 @@ import { ExcelInterviewComponent } from './ExcelManager/ExcelInterview/ExcelInte
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'ExcelManager/ExcelInterview', component: ExcelInterviewComponent},
+      { path: 'ExcelManager/ExcelInterview', component: ExcelInterviewComponent },
+      { path: 'logon', component: LogonComponent },
     ])
   ],
   providers: [],
