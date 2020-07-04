@@ -7,9 +7,9 @@
 <div class="container">
   <form class="form-signin" role="form">
     <h2 class="form-signin-heading">欢迎登陆</h2>
-    <input type="text" class="form-control" placeholder="用户名" value="{{usermodel?.username}}" required autofocus />
+    <input type="text" class="form-control" placeholder="用户名" [(ngModel)]="usermodel.username" id="username" name="username"/>
     <input type="password" class="form-control" placeholder="密码" required />
-    <input type="text" class="form-control" placeholder="验证码" value="{{usermodel?.password}}" required  />
+    <input type="text" class="form-control" placeholder="验证码" [(ngModel)]="usermodel.userpassword" id="checkcode" name="checkcode"/>
     <label class="checkbox">
       <input type="checkbox" value="remember-me" /> 阅读用户协议
     </label>
