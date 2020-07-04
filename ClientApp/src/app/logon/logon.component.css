@@ -7,3 +7,10 @@
 input {
     margin-bottom:3px;
 }
+
+#look {
+  position: absolute;
+  top: 19%;
+  left: 88%;
+  cursor: pointer;
+}

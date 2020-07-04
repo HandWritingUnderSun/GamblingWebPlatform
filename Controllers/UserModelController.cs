@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace GamblingWebPlatform.Controllers
 {
+    [ApiController]
+    [Route("api/UserModelController")]
     public class UserModelController :ControllerBase
     {
 
@@ -18,9 +18,10 @@ namespace GamblingWebPlatform.Controllers
         }
 
         [HttpGet]
+        [Route("UserModel")]
         public UserModel Get()
         {
-            return new UserModel("zhuyu","1234");
+            return new UserModel("zhuyu", "1234");
         }
     }
 }

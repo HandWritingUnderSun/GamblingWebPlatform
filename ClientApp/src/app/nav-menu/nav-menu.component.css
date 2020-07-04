@@ -16,3 +16,23 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+a:link {
+  color: #3C3C3C;
+
+}
+
+ 
+a:visited {
+
+}
+
+ 
+a:hover {
+
+}
+
+ 
+a:active {
+  background-color: #1b6ec2
+}
