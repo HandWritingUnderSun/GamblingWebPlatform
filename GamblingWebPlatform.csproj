@@ -24,7 +24,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\logon\usermodel.model.ts" />
+    <None Remove="ClientApp\src\app\logon\usermodel.service.ts.ts" />
     <None Remove="ClientApp\src\bootstrap.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\logon\usermodel.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\logon\usermodel.service.ts.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

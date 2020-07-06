@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { UserModel } from './usermodel.model';
 
 @Component({
   selector: 'app-logon-data',
@@ -11,14 +12,14 @@ import { map } from 'rxjs/operators';
 export class LogonComponent implements OnInit {
   usermodel: UserModel;
   usermodel2: UserModel;
-  usermodelservice: UserModelService;
   usermodelurl: string;
   private config = { responseType: 'UserModel' };
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, usermodelservice: UserModelService;) {
     this.usermodelurl = baseUrl + 'api/UserModelController/UserModel';
     this.getUserModel();
     http.get<UserModel>(baseUrl + 'api/UserModelController/UserModel').subscribe(result => {
+      result = result.json().data;
       this.usermodel = {"username":"123","userpassword":"123"};
       alert(this.usermodel);
       //alert(JSON.parse(this.usermodel2));
@@ -37,30 +38,3 @@ export class LogonComponent implements OnInit {
     return http.get<UserModel>(url);
   }
 } 
-
-export class UserModel {
-  username: string;
-  userpassword: string;
-
-  constructor(name: string, password: string) {
-    this.username = name;
-    this.userpassword = password;
-  }
-}
-
-
-export class UserModelService {
-  constructor(private httpClient: HttpClient) { }
-
-  getUserModel(baseUrl: string) {
-    return this.httpClient.get<UserModel>(baseUrl)
-      .pipe(
-        map((data: any) => {
-          const usermodel: UserModel = new UserModel(
-            data.usermodel.username,
-            data.usermodel.userpassword);
-          return usermodel;
-        })
-      );
-  }
-}
