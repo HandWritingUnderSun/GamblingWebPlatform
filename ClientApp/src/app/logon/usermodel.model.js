@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var UserModel = /** @class */ (function () {
-    function UserModel() {
+    function UserModel(name, password) {
+        this.username = name;
+        this.userpassword = password;
     }
     return UserModel;
 }());
