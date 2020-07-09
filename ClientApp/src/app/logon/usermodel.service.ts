@@ -15,13 +15,11 @@ export class UserModelService {
     console.log('1234');
   }
 
-  getUserModel(): UserModel {
-    //return this.http.get(this.api_url)
-    //  .toPromise()
-    //  //.then(res => res as UserModel)
-    //  .then(res => console.log(res))
-    //  .catch(this.handleError);
-    return new UserModel('123','123');
+  getUserModel(): Promise<UserModel> {
+    return this.http.get(this.api_url)
+      .toPromise()
+      .then(res => res as UserModel)
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

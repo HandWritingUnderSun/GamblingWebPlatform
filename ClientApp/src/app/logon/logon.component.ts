@@ -18,10 +18,9 @@ export class LogonComponent implements OnInit {
   }
 
   getUserModel(): void {
+    alert("123");
     //this.usermodelservice
     //  .getUserModel()
-    //  //.then(usermodel => this.usermodel = usermodel);
-    //  .then(res => console.log(res));
-    this.usermodel = this.usermodelservice.getUserModel();
+    //  .then(usermodel => this.usermodel = usermodel);
   }
 } 

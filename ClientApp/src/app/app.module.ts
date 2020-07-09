@@ -31,6 +31,7 @@ import { LogonComponent } from './logon/logon.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'ExcelManager/ExcelInterview', component: ExcelInterviewComponent },
+      { path: 'logon', component: LogonComponent },
     ])
   ],
   providers: [],
