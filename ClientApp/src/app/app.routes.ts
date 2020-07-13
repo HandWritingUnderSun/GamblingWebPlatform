@@ -1,5 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { LogonComponent } from './logon/logon.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 export const routes: Routes = [
   {
@@ -10,6 +11,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LogonComponent
+  },
+  {
+    path: 'nav-menu',
+    component: NavMenuComponent
   }
 ];
 

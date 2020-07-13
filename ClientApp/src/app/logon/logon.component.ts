@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit,Input } from '@angular/core';
 import { AuthModel } from '../auth/auth.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logon',
@@ -15,7 +16,7 @@ export class LogonComponent implements OnInit {
 
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public router: Router) {
   }
 
   ngOnInit(): void {
@@ -24,6 +25,7 @@ export class LogonComponent implements OnInit {
 
   onClick() {
     this.getAuthModel();
+    this.router.navigateByUrl("/home");
   }
 
   getAuthModel() {

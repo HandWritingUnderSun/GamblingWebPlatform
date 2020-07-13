@@ -1,23 +1,22 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Grid } from 'ag-grid-community';
 
 @Component({
   selector: 'app-ExcelManager-ExcelInterview',
   templateUrl: './ExcelInterview.component.html'
 })
 export class ExcelInterviewComponent {
-  public forecasts: WeatherForecast[];
+  columnDefs = [
+    { field: 'make' },
+    { field: 'model' },
+    { field: 'price' }
+  ];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
-      this.forecasts = result;
-    }, error => console.error(error));
-  }
-}
+  rowData = [
+    { make: 'Toyota', model: 'Celica', price: 35000 },
+    { make: 'Ford', model: 'Mondeo', price: 32000 },
+    { make: 'Porsche', model: 'Boxter', price: 72000 }
+  ];
 
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
 }
