@@ -21,7 +21,16 @@ namespace GamblingWebPlatform.Controllers
         [Route("UserModel")]
         public UserModel Get()
         {
-            return new UserModel("zhuyu", "1234");
+            return new UserModel("jinyu", "654321");
+        }
+
+        [HttpGet]
+        [Route("CheckUser")]
+        public bool Get(string name,string password)
+        {
+            string username = name;
+            string userpassword = password;
+            return true;
         }
     }
 }

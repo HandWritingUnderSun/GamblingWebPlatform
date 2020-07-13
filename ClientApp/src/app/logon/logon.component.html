@@ -7,12 +7,13 @@
 <div class="container">
   <form class="form-signin" role="form">
     <h2 class="form-signin-heading">欢迎登陆</h2>
-    <input type="text" class="form-control" placeholder="用户名" value="123" name="username"/>
-    <input type="password" class="form-control" placeholder="密码" required />
-    <input type="text" class="form-control" placeholder="验证码" value="123" name="checkcode"/>
+    <input type="text" class="form-control" placeholder="用户名" [(ngModel)]="authmodel.userName" name="username" />
+    <p>username:{{authmodel.username}}</p>
+    <input type="password" class="form-control" placeholder="密码" [(ngModel)]="authmodel.userPassword" name="userpassword" />
+    <input type="text" class="form-control" placeholder="验证码" />
     <label class="checkbox">
       <input type="checkbox" value="remember-me" /> 阅读用户协议
     </label>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onClick()">登录</button>
   </form>
 </div>

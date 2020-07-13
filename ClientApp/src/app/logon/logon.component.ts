@@ -1,26 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { UserModel } from './usermodel.model';
-import { UserModelService } from './usermodel.service';
+import { Component, Inject, OnInit,Input } from '@angular/core';
+import { AuthModel } from '../auth/auth.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
-  selector: 'app-logon-data',
+  selector: 'app-logon',
   templateUrl: './logon.component.html',
-  styleUrls: ['./logon.component.css'],
-  providers: [UserModelService]
+  styleUrls: ['./logon.component.css']
 })
 
 export class LogonComponent implements OnInit {
-  usermodel: UserModel;
+  authmodel: AuthModel = new AuthModel();
+  public username='';
+  public userpassword = '';
 
-  constructor(private usermodelservice: UserModelService) {  }
-  ngOnInit() {
-    this.getUserModel();
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+  constructor(public http: HttpClient) {
   }
 
-  getUserModel(): void {
-    alert("123");
-    //this.usermodelservice
-    //  .getUserModel()
-    //  .then(usermodel => this.usermodel = usermodel);
+  ngOnInit(): void {
+    this.getAuthModel();
   }
+
+  onClick() {
+    this.getAuthModel();
+  }
+
+  getAuthModel() {
+    console.log("1234");
+    let api_url = 'http://localhost:61169/api/UserModelController/UserModel';
+    this.http.get<AuthModel>(api_url).subscribe(res => { console.log(res as AuthModel); this.authmodel = res; }
+    );
+    //this.service.getAuthModel().subscribe(hero => this.authmodel = hero);
+    //console.log(this.authmodel.username);
+  }
+
 } 

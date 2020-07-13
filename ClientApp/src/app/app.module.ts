@@ -5,36 +5,28 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { ExcelInterviewComponent } from './ExcelManager/ExcelInterview/ExcelInterview.component';
+//import { NavMenuComponent } from './nav-menu/nav-menu.component';
+//import { HomeComponent } from './home/home.component';
+//import { CounterComponent } from './counter/counter.component';
+//import { FetchDataComponent } from './fetch-data/fetch-data.component';
+//import { ExcelInterviewComponent } from './ExcelManager/ExcelInterview/ExcelInterview.component';
 import { LogonComponent } from './logon/logon.component';
+import { routing } from './app.routes';
+
+import { AuthService } from './auth/auth.service'; 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
-    ExcelInterviewComponent,
     LogonComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'ExcelManager/ExcelInterview', component: ExcelInterviewComponent },
-      { path: 'logon', component: LogonComponent },
-    ])
+    routing
   ],
-  providers: [],
+  providers: [{ provide: 'auth', useClass: AuthService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
