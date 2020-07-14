@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { LogonComponent } from './logon/logon.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component'
 import { routing } from './app.routes';
 
 import { AuthService } from './auth/auth.service'; 
@@ -16,7 +17,8 @@ import { AuthService } from './auth/auth.service';
   declarations: [
     AppComponent,
     LogonComponent,
-    HomeComponent
+    HomeComponent,
+    NavMenuComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

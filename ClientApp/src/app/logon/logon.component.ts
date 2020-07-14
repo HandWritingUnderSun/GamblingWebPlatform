@@ -25,7 +25,7 @@ export class LogonComponent implements OnInit {
 
   onClick() {
     this.getAuthModel();
-    this.router.navigateByUrl("/home");
+    this.router.navigateByUrl('/nav-menu');
   }
 
   getAuthModel() {
