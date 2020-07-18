@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\app-routing.module.ts" />
     <None Remove="ClientApp\src\app\app.routes.ts" />
     <None Remove="ClientApp\src\app\logon\usermodel.model.js" />
     <None Remove="ClientApp\src\app\logon\usermodel.model.js.map" />
