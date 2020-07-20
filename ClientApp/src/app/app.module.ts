@@ -12,6 +12,7 @@ import { LogonComponent } from './logon/logon.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ExcelInterviewComponent } from './ExcelManager/ExcelInterview/ExcelInterview.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { routing } from './app.routes';
 
 import { AuthService } from './auth/auth.service';
@@ -23,7 +24,8 @@ import { AuthService } from './auth/auth.service';
     HomeComponent,
     NavMenuComponent,
     ExcelInterviewComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    FetchDataComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

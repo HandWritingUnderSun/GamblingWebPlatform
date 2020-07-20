@@ -3,6 +3,7 @@ import { LogonComponent } from './logon/logon.component';
 import { HomeComponent } from './home/home.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ExcelInterviewComponent } from './ExcelManager/ExcelInterview/ExcelInterview.component';
+import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 export const routes: Routes = [
@@ -26,6 +27,10 @@ export const routes: Routes = [
   {
     path: 'ExcelManager/ExcelInterview',
     component: ExcelInterviewComponent
+  },
+  {
+    path: 'fetch-data',
+    component: FetchDataComponent
   },
   {
     path: 'pages/welcome',
