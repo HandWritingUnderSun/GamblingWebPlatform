@@ -3,19 +3,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-
-import { HomeComponent } from './home/home.component';
-import { AppComponent } from './app.component';
 import { AgGridModule } from 'ag-grid-angular';
-import { LogonComponent } from './logon/logon.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { ExcelInterviewComponent } from './ExcelManager/ExcelInterview/ExcelInterview.component';
-import { WelcomeComponent } from './pages/welcome/welcome.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+
+import { AppComponent } from './app.component';
 import { routing } from './app.routes';
 
+import { HomeComponent } from './home/home.component';
+import { LogonComponent } from './logon/logon.component';
+
+
 import { AuthService } from './auth/auth.service';
+import { SigninModule } from './signin/signin.module';
+import { AboutModule } from './about/about.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,9 @@ import { AuthService } from './auth/auth.service';
     HttpClientModule,
     FormsModule,
     AgGridModule.withComponents([]),
-    routing
+    routing,
+    SigninModule,
+    AboutModule
   ],
   providers: [{ provide: 'auth', useClass: AuthService }],
   bootstrap: [AppComponent]
