@@ -16,10 +16,6 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 
 import { AuthService } from './auth/auth.service';
-import { SigninModule } from './signin/signin.module';
-import { AboutModule } from './about/about.module';
-import { LogonModule } from './logon/logon.module';
-import { NavMenuModule } from './nav-menu/nav-menu.module'
 
 @NgModule({
   declarations: [
