@@ -1,15 +1,13 @@
 import { Routes, RouterModule } from '@angular/router';
 import { LogonComponent } from './logon/logon.component';
 import { HomeComponent } from './home/home.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { ExcelInterviewComponent } from './ExcelManager/ExcelInterview/ExcelInterview.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { SigninComponent } from './signin/signin.component';
+import { AboutComponent } from './about/about.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'logon',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -21,21 +19,12 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'nav-menu',
-    component: NavMenuComponent
+    path: 'about',
+    component: AboutComponent
   },
   {
-    path: 'ExcelManager/ExcelInterview',
-    component: ExcelInterviewComponent
-  },
-  {
-    path: 'fetch-data',
-    component: FetchDataComponent
-  },
-  {
-    path: 'pages/welcome',
-    component: WelcomeComponent,
-    loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule)
+    path: 'signin',
+    component: SigninComponent
   }
 ];
 

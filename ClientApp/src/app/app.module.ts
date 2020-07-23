@@ -10,21 +10,25 @@ import { routing } from './app.routes';
 
 import { HomeComponent } from './home/home.component';
 import { LogonComponent } from './logon/logon.component';
+import { SigninComponent } from './signin/signin.component';
+import { AboutComponent } from './about/about.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 
 import { AuthService } from './auth/auth.service';
 import { SigninModule } from './signin/signin.module';
 import { AboutModule } from './about/about.module';
+import { LogonModule } from './logon/logon.module';
+import { NavMenuModule } from './nav-menu/nav-menu.module'
 
 @NgModule({
   declarations: [
     AppComponent,
     LogonComponent,
     HomeComponent,
-    NavMenuComponent,
-    ExcelInterviewComponent,
-    WelcomeComponent,
-    FetchDataComponent
+    AboutComponent,
+    SigninComponent,
+    NavMenuComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,9 +36,7 @@ import { AboutModule } from './about/about.module';
     HttpClientModule,
     FormsModule,
     AgGridModule.withComponents([]),
-    routing,
-    SigninModule,
-    AboutModule
+    routing
   ],
   providers: [{ provide: 'auth', useClass: AuthService }],
   bootstrap: [AppComponent]
