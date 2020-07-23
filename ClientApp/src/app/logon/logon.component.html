@@ -1,14 +1,14 @@
-<h1 id="tableLabel">Logon in</h1>
+<h1>Logon in</h1>
 
 <p>This component demonstrates Logon in system.</p>
 
-<!--<p *ngIf="!usermodel"><em>Loading...</em></p>-->
+<p *ngIf="!authmodel"><em>Loading...</em></p>
 
 <div class="container">
   <form class="form-signin" role="form">
     <h2 class="form-signin-heading">欢迎登陆</h2>
     <input type="text" class="form-control" placeholder="用户名" [(ngModel)]="authmodel.userName" name="username" />
-    <p>username:{{authmodel.userName}}</p>
+    <!--<p>username:{{authmodel.userName}}</p>-->
     <input type="password" class="form-control" placeholder="密码" [(ngModel)]="authmodel.userPassword" name="userpassword" />
     <input type="text" class="form-control" placeholder="验证码" />
     <label class="checkbox">
@@ -16,4 +16,6 @@
     </label>
     <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onClick()">登录</button>
   </form>
+  <router-outlet></router-outlet>
 </div>
+

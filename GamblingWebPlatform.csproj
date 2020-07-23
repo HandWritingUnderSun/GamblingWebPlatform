@@ -27,6 +27,7 @@
     <None Remove="ClientApp\src\app\app-routing.module.ts" />
     <None Remove="ClientApp\src\app\app.routes.ts" />
     <None Remove="ClientApp\src\app\ExcelManager\ExcelInterview\ExcelInterview.module.ts" />
+    <None Remove="ClientApp\src\app\logon\logon.routes.ts" />
     <None Remove="ClientApp\src\app\logon\usermodel.model.js" />
     <None Remove="ClientApp\src\app\logon\usermodel.model.js.map" />
     <None Remove="ClientApp\src\app\logon\usermodel.model.ts" />
@@ -38,6 +39,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\app.routes.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\ExcelManager\ExcelInterview\ExcelInterview.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\logon\logon.routes.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
