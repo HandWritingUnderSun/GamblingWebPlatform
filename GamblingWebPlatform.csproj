@@ -25,6 +25,8 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\app-routing.module.ts" />
+    <None Remove="ClientApp\src\app\app.routes.js" />
+    <None Remove="ClientApp\src\app\app.routes.js.map" />
     <None Remove="ClientApp\src\app\app.routes.ts" />
     <None Remove="ClientApp\src\app\ExcelManager\ExcelInterview\ExcelInterview.module.ts" />
     <None Remove="ClientApp\src\app\logon\logon.routes.ts" />
