@@ -3,6 +3,7 @@ import { LogonComponent } from './logon/logon.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { AboutComponent } from './about/about.component';
+import { ExcelInterviewComponent } from './ExcelManager/ExcelInterview/ExcelInterview.component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,10 @@ export const routes: Routes = [
   {
     path: 'signin',
     component: SigninComponent
+  },
+  {
+    path: 'gambling',
+    component: ExcelInterviewComponent
   }
 ];
 

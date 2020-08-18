@@ -3,8 +3,7 @@
 <p>This component demonstrates fetching data from the database.</p>
 
 <p *ngIf="!forecasts"><em>Loading...</em></p>
-<button nz-button nzType="primary" (click)="incrementCounter()">LoadExcel</button>
-
+<input type="file" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)"/>
 <div nz-row>
   <div nz-col nzSpan="12">col-12</div>
   <div nz-col nzSpan="12">col-12</div>
